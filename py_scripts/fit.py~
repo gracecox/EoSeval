@@ -1,0 +1,8 @@
+import numpy as np
+from scipy.optimize import curve_fit
+
+def fit(func, xdata, ydata)
+
+  popt, pcov = curve_fit(func, xdata, ydata)
+
+  return
