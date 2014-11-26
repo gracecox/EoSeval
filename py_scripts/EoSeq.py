@@ -3,10 +3,10 @@ from math import exp
 
 def BMEOS(V, Vo, K, Kp):
 	Kp= 4.0 	
-	assert type(Vo) == float, 'Vo is not a float number'
-	assert type(K) == float, 'K is not a float number'
-	assert type(Kp) == float, 'Kp is not a float number'
-	assert Kp == 4.0, 'This is trying to use BM3EOS for the 2nd Order Equation'
+#	assert type(Vo) == float, 'Vo is not a float number'
+#	assert type(K) == float, 'K is not a float number'
+#	assert type(Kp) == float, 'Kp is not a float number'
+#	assert Kp == 4.0, 'This is trying to use BM3EOS for the 2nd Order Equation'
 	
 	n= Vo/V
 	P = (((3.0/2.0)*K)
@@ -16,9 +16,9 @@ def BMEOS(V, Vo, K, Kp):
 	
 def BM3EOS(V,Vo, K, Kp):
 	
-	assert type(Vo) == float, 'Vo is not a float number'
-	assert type(K) == float, 'K is not a float number'
-	assert type(Kp) == float, 'Kp is not a float number'
+#	assert type(Vo) == float, 'Vo is not a float number'
+#	assert type(K) == float, 'K is not a float number'
+#	assert type(Kp) == float, 'Kp is not a float number'
 	
 	n= Vo/V
 	P= (((3.0/2.0)*K)
