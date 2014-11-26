@@ -14,9 +14,23 @@ class EOS():
         self.optparams = popt
         self.cov = pcov
         
+         
     def evaluate(self, V):
         
-        return self.function(V, self.optparams)
+        if len(self.optparams) == 1:
+            P = self.function(V, self.optparams[0])
+            
+        elif len(self.optparams) == 2:
+            P = self.function(V, self.optparams[0], self.optparams[1])
+
+        elif len(self.optparams) == 3:
+            P = self.function(V, self.optparams[0], self.optparams[1],self.optparams[2])
+        else:
+            P = 0
+            print "ERROR BROKEN!"
+
+        return P
+
         
     def evaluate_list(self, V):
         
@@ -24,7 +38,8 @@ class EOS():
         
         for volume in V:
             
-            P.append(self.function(volume, self.parameters))
+            P.append(self.evaluate(volume))
+        
+        return P
         
         
-
