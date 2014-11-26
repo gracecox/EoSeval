@@ -1,9 +1,7 @@
 from math import exp
 
 
-def BMEOS(V, parameters):
-	Vo = parameters[0]
-	K = parameters[1]
+def BMEOS(V, Vo, K, Kp):
 	Kp= 4.0 	
 	assert type(Vo) == float, 'Vo is not a float number'
 	assert type(K) == float, 'K is not a float number'
@@ -16,10 +14,7 @@ def BMEOS(V, parameters):
 
 	return P
 	
-def BM3EOS(V, parameters):
-	Vo = parameters[0]
-	K = parameters[1]
-	Kp= parameters[2]
+def BM3EOS(V,Vo, K, Kp):
 	
 	assert type(Vo) == float, 'Vo is not a float number'
 	assert type(K) == float, 'K is not a float number'
@@ -32,10 +27,7 @@ def BM3EOS(V, parameters):
 	
 	return P
 	
-def VINETEOS(V, parameters):
-	Vo = parameters[0]
-	K = parameters[1]
-	Kp= parameters[2]
+def VINETEOS(V, Vo, K, Kp):
 	
 	assert type(Vo) == float, 'Vo is not a float number'
 	assert type(K) == float, 'K is not a float number'
