@@ -1,12 +1,15 @@
 from math import exp
 
 
-def BMEOS(V, Vo, K, Kp):
-	assert type(V) == float, 'V is not a float number'
+def BMEOS(parameters):
+	V = parameters(0)
+	Vo = parameters(1)
+	K = parameters(2)
+	Kp= 4.0 	
 	assert type(Vo) == float, 'Vo is not a float number'
 	assert type(K) == float, 'K is not a float number'
 	assert type(Kp) == float, 'Kp is not a float number'
-	assert Kp == 4, 'This is trying to use BM3EOS for the 2nd Order Equation'
+	assert Kp == 4.0, 'This is trying to use BM3EOS for the 2nd Order Equation'
 	
 	n= Vo/V
 	P = (((3.0/2.0)*K)
@@ -14,8 +17,12 @@ def BMEOS(V, Vo, K, Kp):
 
 	return P
 	
-def BM3EOS(V, Vo, K, Kp):
-	assert type(V) == float, 'V is not a float number'
+def BM3EOS(parameters):
+	V = parameters(0)
+	Vo = parameters(1)
+	K = parameters(2)
+	Kp= parameters(3)
+	
 	assert type(Vo) == float, 'Vo is not a float number'
 	assert type(K) == float, 'K is not a float number'
 	assert type(Kp) == float, 'Kp is not a float number'
@@ -27,8 +34,12 @@ def BM3EOS(V, Vo, K, Kp):
 	
 	return P
 	
-def VINETEOS(V, Vo, K, Kp):
-	assert type(V) == float, 'V is not a float number'
+def VINETEOS(parameters):
+	V = parameters(0)
+	Vo = parameters(1)
+	K = parameters(2)
+	Kp= parameters(3)
+	
 	assert type(Vo) == float, 'Vo is not a float number'
 	assert type(K) == float, 'K is not a float number'
 	assert type(Kp) == float, 'Kp is not a float number'
