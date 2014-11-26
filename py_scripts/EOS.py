@@ -9,7 +9,7 @@ class EOS():
     
     def fit(self, Pdata, Vdata, initparams):   
         "Function to fit EoS functions to data"
-        popt, pcov = curve_fit(func, Pdata, Vdata, initparams)
+        popt, pcov = curve_fit(self.function, Pdata, Vdata, p0=initparams)
 
         self.optparams = popt
         self.cov = pcov
