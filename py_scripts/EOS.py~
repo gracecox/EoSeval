@@ -11,12 +11,12 @@ class EOS():
         "Function to fit EoS functions to data"
         popt, pcov = curve_fit(func, Pdata, Vdata, initparams[1:4])
 
-        self.optparam = popt
+        self.optparams = popt
         self.cov = pcov
         
     def evaluate(self, V):
         
-        return self.function(V, self.parameters)
+        return self.function(V, self.optparams)
         
     def evaluate_list(self, V):
         
