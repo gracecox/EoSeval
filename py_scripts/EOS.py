@@ -1,3 +1,5 @@
+from scipy.optimize import curve_fit
+
 class EOS():
     
     def __init__(self, function):
@@ -5,16 +7,16 @@ class EOS():
         self.function = function
         self.parameters = None
     
-    def fit(self, Pdata, Vdata):   
+    def fit(self, Pdata, Vdata, initparams[1:4]):   
         "Function to fit EoS functions to data"
-        popt, pcov = curve_fit(func, xdata, ydata)
+        popt, pcov = curve_fit(func, Pdata, Vdata, initparams[1:4])
 
-        self.parameters = popt
+        self.optparams = popt
         self.cov = pcov
         
     def evaluate(self, V):
         
-        return self.function(V, self.parameters)
+        return self.function(V, self.optparams)
         
     def evaluate_list(self, V):
         
